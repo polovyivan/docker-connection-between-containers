@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  customer-app:
+    image: customer-app:latest
+    restart: on-failure
+    ports:
+      - "8080:8080"
+    networks:
+      - docker-compose_default
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/customers
+
+networks:
+  docker-compose_default:
+    external: true
