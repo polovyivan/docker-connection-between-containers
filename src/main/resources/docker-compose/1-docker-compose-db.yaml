@@ -1,6 +1,7 @@
 version: '3'
 services:
-  db:
+  db: # this is a service name
+    container_name: mysql_db # this is a container name
     image: mysql:8
     restart: always
     ports:

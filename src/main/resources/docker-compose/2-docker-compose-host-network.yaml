@@ -1,5 +1,6 @@
 version: '3.8'
 services:
   customer-app:
+    restart: on-failure
     image: customer-app:latest
     network_mode: "host"

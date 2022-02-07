@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  db:  # this is a service name
+    container_name: mysql_db # this is a container name
+    image: mysql:8
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: customers
+      MYSQL_ROOT_PASSWORD: password
+    networks:
+      - custommer-app-db-network
+
+  customer-app:
+    image: customer-app:latest
+    restart: on-failure
+    ports:
+      - "8080:8080"
+    networks:
+      - custommer-app-db-network
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/customers
+
+networks:
+  custommer-app-db-network:
