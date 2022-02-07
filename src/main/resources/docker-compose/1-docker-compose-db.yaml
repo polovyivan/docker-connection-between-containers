@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 services:
   db: # this is a service name
     container_name: mysql_db # this is a container name
