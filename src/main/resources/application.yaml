@@ -8,6 +8,8 @@ spring:
     initialization-mode: always
     data: classpath:data.sql
     url: jdbc:mysql://localhost:3306/customers
+#    url: jdbc:mysql://127.0.0.1:3306/customers
+#    url: jdbc:mysql://192.168.122.1:3306/customers
     username: root
     password: password
     type: com.zaxxer.hikari.HikariDataSource
